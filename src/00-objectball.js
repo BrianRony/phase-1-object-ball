@@ -145,12 +145,17 @@ function shoeSize(name){
       return "Shoe size not found";
     }
   }
+  function teamColors(){
+    let object = gameObject();
+    let teams = [object.home.colors, object.away.colors];
+        return teams;
+  }
   function teamNames(){
     let object = gameObject();
     let teams = [object.home.teamName, object.away.teamName];
         return teams;
   }
-  const playerNumbers = (teamName) => {
+  function playerNumbers(teamName){
     let object = gameObject();
     let jerseyNumbers = [];
     if (object.home.teamName === teamName) {
@@ -165,7 +170,18 @@ function shoeSize(name){
     }
     return jerseyNumbers;
   }
-  const bigShoeRebounds = () => {
+  function playerStats(){
+    let object = gameObject();
+    for(let stats in object){
+      if(object.home){
+      return object.home.players
+      } else {
+      return object.away.players
+      }
+    }
+    return stats;
+  }
+  function bigShoeRebounds(){
     let object = gameObject();
     let shoeSize = 0;
   
